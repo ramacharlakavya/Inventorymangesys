@@ -19,21 +19,21 @@ import com.capgemini.inventorymanagementsystem.service.RawMaterialStockService;
 public class RawMaterialStockController {
  
 
-		@Autowired
+		@Autowired           //*used to make connections b/w two classes//
 		RawMaterialStockService rawMaterialStockService;
 		public void setRawMaterialStockService(RawMaterialStockService rawMaterialStockService)
 		{
 			this.rawMaterialStockService=rawMaterialStockService;
 		}
 		
-	   
+	   //* @putmapping is used to update properties //
 		 @PutMapping(value="rawmaterial/updateStock",consumes="application/json")
 		   public ResponseEntity<String> updateStock(@RequestBody()RawMaterialStock rawMaterialStock)
 		   {
 			   String message=rawMaterialStockService.updateStock(rawMaterialStock);
 				  
 				 
-			   if(message!=null)
+			   if(message!=null)     //*conditional statement//
 					return	new ResponseEntity<String>(message, HttpStatus.OK);
 				else
 				    throw new NotFoundOperation("Item Not Found");

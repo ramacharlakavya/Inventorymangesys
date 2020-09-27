@@ -7,10 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="RawmaterialStock")
+@Entity                           // *class mapped to a table
+@Table(name="RawmaterialStock")    //* table name is rawmaterialstock//
 public class RawMaterialStock {
-	 @Id	
+	 @Id	                          //* primary key declaration //
 	   @Column(name="orderid")
 	   int orderId;
 	 @Column(name="name")
@@ -52,7 +52,7 @@ public class RawMaterialStock {
 		this.expiryDate = expiryDate;
 		this.qualityCheck = qualityCheck;
 		this.processDate = processDate;
-	}
+	}                      // *calling setters and getters methods//
 	public int getOrderId() {
 		return orderId;
 	}
